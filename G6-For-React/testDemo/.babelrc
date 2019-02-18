@@ -1,0 +1,17 @@
+{
+  "presets": ["env", "react","stage-0"],
+  "plugins": [
+    ["transform-runtime", {
+      "helpers": false,
+      "polyfill": true,
+      "regenerator": true,
+      "moduleName": "babel-runtime"
+    }],
+    ["import", {
+        "libraryName": "antd",
+        "libraryDirectory": "es",
+        "style": true   // `style: true` 会加载 less 文件 `style: css` 会加载 css 文件
+    }],
+    ["transform-es2015-modules-umd"]  //解决当使用import导入模块时，出现exports is not defined
+  ]
+}
