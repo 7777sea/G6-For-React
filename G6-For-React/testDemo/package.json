@@ -19,6 +19,7 @@
     "babel-runtime": "^6.26.0",
     "echarts": "^4.2.0-rc.2",
     "element-resize-event": "^2.0.9",
+    "gg-editor": "^2.0.1",
     "normalize.css": "^7.0.0",
     "prop-types": "^15.6.2",
     "qs": "^6.6.0",
