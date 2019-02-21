@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Card, Form, Input } from 'antd';
-import GGEditor,{ withPropsAPI } from 'gg-editor';
+import { withPropsAPI } from 'gg-editor';
 
 const { Item } = Form;
 
@@ -15,11 +15,12 @@ const inlineFormItemLayout = {
   },
 };
 
-class NodeDetail extends React.Component {
+class GroupDetail extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
+
     const { form, propsAPI } = this.props;
-    const { getSelected, executeCommand, update } = propsAPI;
+    const { getSelected, update } = propsAPI;
 
     form.validateFieldsAndScroll((err, values) => {
       if (err) {
@@ -27,16 +28,13 @@ class NodeDetail extends React.Component {
       }
 
       const item = getSelected()[0];
-      // alert(values.label);
-      // console.log(GGEditor());
+
       if (!item) {
         return;
       }
 
-      executeCommand(() => {
-        update(item, {
-          ...values,
-        });
+      update(item, {
+        ...values,
       });
     });
   }
@@ -52,13 +50,13 @@ class NodeDetail extends React.Component {
       return null;
     }
 
-    const { label } = item.getModel();
+    const { label = '新建分组' } = item.getModel();
 
     return (
-      <Card type="inner" title="节点属性" bordered={false}>
+      <Card type="inner" title="群组属性" bordered={false}>
         <Form onSubmit={this.handleSubmit}>
           <Item
-            label="标签"
+            label="名称"
             {...inlineFormItemLayout}
           >
             {
@@ -73,4 +71,4 @@ class NodeDetail extends React.Component {
   }
 }
 
-export default Form.create()(withPropsAPI(NodeDetail));
+export default Form.create()(withPropsAPI(GroupDetail));

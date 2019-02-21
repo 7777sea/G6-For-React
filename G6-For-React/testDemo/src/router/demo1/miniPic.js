@@ -1,12 +1,15 @@
 import React from 'react';
 import { Card } from 'antd';
-import { Minimap } from 'gg-editor';
+import GGEditor,{ Minimap } from 'gg-editor';
 
 class EditorMinimap extends React.Component {
     render() {
         return (
             <Card type="inner" title="缩略图" bordered={true}>
-                <Minimap height={200} />
+                <GGEditor>
+                    <Minimap height={200} />
+                </GGEditor>
+                
             </Card>
         );
     }

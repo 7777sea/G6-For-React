@@ -118,11 +118,11 @@ let baseConfig = {
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
         }),
         //代码结构可视化，只在开发环境使用
-        new BundleAnalyzerPlugin({
-            analyzerMode: 'server', // static disabled
-            analyzerHost: '127.0.0.1',
-            analyzerPort: '8888'
-        })
+        // new BundleAnalyzerPlugin({
+        //     analyzerMode: 'server', // static disabled
+        //     analyzerHost: '127.0.0.1',
+        //     analyzerPort: '8888'
+        // })
     ]
 };
 
